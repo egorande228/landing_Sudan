@@ -161,8 +161,8 @@ function media(slotId: SudanMediaSlotId, badge?: string): MediaReference {
   return { slotId, badge };
 }
 
-const placeholderEmailHref = "mailto:placeholder@example.com";
-const placeholderTelegramHref = "https://example.com/telegram-placeholder";
+const placeholderEmailHref = "mailto:PAYPARTNERS-MIDDLEAST@MELBET.COM";
+const placeholderTelegramHref = "https://t.me/Teamcash_Sudan_SouthSudan_Libya";
 
 const pathContactActions: Record<Locale, LinkItem[]> = {
   ar: [
