@@ -1,25 +1,20 @@
 import type { Direction, Locale } from "@/lib/site-types";
 
-type SearchParamsInput =
-  | Record<string, string | string[] | undefined>
-  | URLSearchParams
-  | undefined;
-
 const locales: Locale[] = ["ar", "en"];
 
-function firstValue(value: string | string[] | null | undefined) {
-  return Array.isArray(value) ? value[0] : value ?? undefined;
+export function isLocale(value: string | null | undefined): value is Locale {
+  return locales.includes(value as Locale);
 }
 
-export function resolveLocale(searchParams?: SearchParamsInput): Locale {
-  if (!searchParams) return "ar";
+function stripLocalePrefix(path: string) {
+  for (const locale of locales) {
+    const prefix = `/${locale}`;
 
-  const candidate =
-    searchParams instanceof URLSearchParams
-      ? searchParams.get("lang") ?? undefined
-      : firstValue(searchParams.lang);
+    if (path === prefix) return "/";
+    if (path.startsWith(`${prefix}/`)) return path.slice(prefix.length);
+  }
 
-  return locales.includes(candidate as Locale) ? (candidate as Locale) : "ar";
+  return path || "/";
 }
 
 export function getDirection(locale: Locale): Direction {
@@ -34,17 +29,16 @@ export function localizeHref(href: string, locale: Locale, fallback: Locale = "a
   if (/^(https?:|mailto:|tel:)/.test(href)) return href;
 
   const [pathWithQuery, hash] = href.split("#");
-  const [path, queryString] = pathWithQuery.split("?");
-  const params = new URLSearchParams(queryString ?? "");
+  const [rawPath, queryString] = pathWithQuery.split("?");
+  const normalizedPath = stripLocalePrefix(rawPath || "/");
+  const localizedPath =
+    locale === fallback
+      ? normalizedPath
+      : normalizedPath === "/"
+        ? `/${locale}`
+        : `/${locale}${normalizedPath}`;
 
-  if (locale === fallback) {
-    params.delete("lang");
-  } else {
-    params.set("lang", locale);
-  }
-
-  const query = params.toString();
-  return `${path}${query ? `?${query}` : ""}${hash ? `#${hash}` : ""}`;
+  return `${localizedPath}${queryString ? `?${queryString}` : ""}${hash ? `#${hash}` : ""}`;
 }
 
 export function formatLangLabel(locale: Locale) {

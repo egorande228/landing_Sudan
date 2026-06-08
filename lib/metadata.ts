@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
-import type { Locale } from "@/lib/site-types";
+import { buildPageHref } from "@/lib/navigation";
+import type { Locale, PageKey } from "@/lib/site-types";
 
 type SEOContent = {
   title: string;
   description: string;
 };
 
-export function buildMetadata(locale: Locale, seo: SEOContent): Metadata {
+export function buildMetadata(locale: Locale, pageKey: PageKey, seo: SEOContent): Metadata {
   return {
     title: seo.title,
     description: seo.description,
     alternates: {
+      canonical: buildPageHref(pageKey, locale),
       languages: {
-        ar: "?lang=ar",
-        en: "?lang=en",
+        ar: buildPageHref(pageKey, "ar"),
+        en: buildPageHref(pageKey, "en"),
       },
     },
     openGraph: {
