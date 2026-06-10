@@ -156,8 +156,9 @@ export default function MediaSlot({
   const slot = useMemo(() => getLocalizedSudanMediaSlot(slotId, locale), [locale, slotId]);
   const [errorSrc, setErrorSrc] = useState<string | null>(null);
   const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
-  const hasError = errorSrc === slot.targetPath;
-  const loaded = loadedSrc === slot.targetPath;
+  const imageSrc = slot.targetPath;
+  const hasError = !imageSrc || errorSrc === imageSrc;
+  const loaded = Boolean(imageSrc) && loadedSrc === imageSrc;
   const sceneOnly = fallbackMode === "scene-only";
 
   return (
@@ -167,7 +168,7 @@ export default function MediaSlot({
       style={{ aspectRatio: toAspectRatio(slot.ratio) }}
     >
       <div className="media-slot__inner">
-        {!hasError ? (
+        {imageSrc && !hasError ? (
           <Image
             alt={decorative ? "" : slot.alt}
             className={[
@@ -178,12 +179,12 @@ export default function MediaSlot({
               .filter(Boolean)
               .join(" ")}
             fill
-            key={slot.targetPath}
-            onError={() => setErrorSrc(slot.targetPath)}
-            onLoad={() => setLoadedSrc(slot.targetPath)}
+            key={imageSrc}
+            onError={() => setErrorSrc(imageSrc)}
+            onLoad={() => setLoadedSrc(imageSrc)}
             priority={priority}
             sizes="(max-width: 720px) 100vw, (max-width: 1180px) 50vw, 33vw"
-            src={slot.targetPath}
+            src={imageSrc}
           />
         ) : null}
 

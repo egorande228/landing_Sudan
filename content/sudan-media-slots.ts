@@ -25,7 +25,7 @@ export type SudanMediaSlot = {
   id: SudanMediaSlotId;
   page: "home" | "partnership" | "faq";
   section: string;
-  targetPath: string;
+  targetPath: string | null;
   ratio: string;
   fit: "cover" | "contain";
   alt: Record<Locale, string>;
@@ -49,7 +49,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-hero-stage",
     page: "home",
     section: "hero",
-    targetPath: "/player/hero/hero.png",
+    targetPath: "/player/hero/hero.webp",
     ratio: "4:3",
     fit: "cover",
     alt: {
@@ -64,7 +64,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-casino-discovery",
     page: "home",
     section: "games",
-    targetPath: "/player/games/casino.png",
+    targetPath: "/player/games/casino.webp",
     ratio: "4:3",
     fit: "cover",
     alt: {
@@ -79,7 +79,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-slots",
     page: "home",
     section: "games",
-    targetPath: "/player/games/slots.png",
+    targetPath: "/player/games/slots.webp",
     ratio: "4:3",
     fit: "cover",
     alt: {
@@ -94,7 +94,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-live-games",
     page: "home",
     section: "games",
-    targetPath: "/player/games/live.png",
+    targetPath: null,
     ratio: "4:3",
     fit: "cover",
     alt: {
@@ -109,7 +109,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-football",
     page: "home",
     section: "sports",
-    targetPath: "/player/sports/football.png",
+    targetPath: "/player/sports/football.webp",
     ratio: "4:3",
     fit: "cover",
     alt: {
@@ -124,7 +124,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-live-match",
     page: "home",
     section: "sports",
-    targetPath: "/player/sports/live.png",
+    targetPath: "/player/sports/live.webp",
     ratio: "4:3",
     fit: "cover",
     alt: {
@@ -139,7 +139,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-sports-multi",
     page: "home",
     section: "sports",
-    targetPath: "/player/sports/sports.png",
+    targetPath: "/player/sports/sports.webp",
     ratio: "4:3",
     fit: "cover",
     alt: {
@@ -154,7 +154,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-sports-phone",
     page: "home",
     section: "sports",
-    targetPath: "/player/sports/phone.png",
+    targetPath: "/player/sports/phone.webp",
     ratio: "4:3",
     fit: "cover",
     alt: {
@@ -169,7 +169,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-offers-welcome",
     page: "home",
     section: "offers",
-    targetPath: "/offer/welcome.png",
+    targetPath: null,
     ratio: "16:10",
     fit: "contain",
     alt: {
@@ -184,7 +184,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-offers-rewards",
     page: "home",
     section: "offers",
-    targetPath: "/offer/rewards.png",
+    targetPath: null,
     ratio: "16:10",
     fit: "contain",
     alt: {
@@ -199,7 +199,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-offers-access",
     page: "home",
     section: "offers",
-    targetPath: "/offer/access.png",
+    targetPath: null,
     ratio: "16:10",
     fit: "contain",
     alt: {
@@ -214,7 +214,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "home-final-cta",
     page: "home",
     section: "final-cta",
-    targetPath: "/player/final.png",
+    targetPath: null,
     ratio: "16:10",
     fit: "cover",
     alt: {
@@ -229,7 +229,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "partnership-hero",
     page: "partnership",
     section: "hero",
-    targetPath: "/partnership/hero.png",
+    targetPath: null,
     ratio: "16:10",
     fit: "contain",
     alt: {
@@ -244,7 +244,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "partnership-benefits",
     page: "partnership",
     section: "benefits",
-    targetPath: "/partnership/benefits.png",
+    targetPath: null,
     ratio: "16:10",
     fit: "cover",
     alt: {
@@ -259,7 +259,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "partnership-tools",
     page: "partnership",
     section: "tools",
-    targetPath: "/partnership/tools.png",
+    targetPath: null,
     ratio: "16:10",
     fit: "contain",
     alt: {
@@ -274,7 +274,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "partnership-partner-route",
     page: "partnership",
     section: "paths",
-    targetPath: "/partnership/partner.png",
+    targetPath: "/partnership/partner.webp",
     ratio: "16:9",
     fit: "contain",
     alt: {
@@ -289,7 +289,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "partnership-agent-route",
     page: "partnership",
     section: "paths",
-    targetPath: "/partnership/agent.png",
+    targetPath: "/partnership/agent.webp",
     ratio: "16:9",
     fit: "contain",
     alt: {
@@ -304,7 +304,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "partnership-final-cta",
     page: "partnership",
     section: "final-cta",
-    targetPath: "/partnership/final-cta.png",
+    targetPath: null,
     ratio: "16:10",
     fit: "cover",
     alt: {
@@ -319,7 +319,7 @@ const mediaSlots: Record<SudanMediaSlotId, SudanMediaSlot> = {
     id: "faq-support",
     page: "faq",
     section: "support",
-    targetPath: "/support/faq.png",
+    targetPath: null,
     ratio: "16:10",
     fit: "cover",
     alt: {

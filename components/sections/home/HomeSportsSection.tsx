@@ -76,7 +76,7 @@ function getSportsArtName(card: SportsCard, index: number) {
 }
 
 function getPlaceholderLabel(locale: Locale) {
-  return locale === "ar" ? "مكان PNG" : "PNG slot";
+  return locale === "ar" ? "مكان المعاينة" : "Preview slot";
 }
 
 export default function HomeSportsSection({
@@ -103,6 +103,7 @@ export default function HomeSportsSection({
               const artName = getSportsArtName(card, index);
               const placeholderLabel = getPlaceholderLabel(locale);
               const mediaSlot = card.media ? getLocalizedSudanMediaSlot(card.media.slotId, locale) : null;
+              const mediaSrc = mediaSlot?.targetPath ?? null;
 
               return (
                 <Link
@@ -114,7 +115,7 @@ export default function HomeSportsSection({
                   target={sportsLink.external ? "_blank" : undefined}
                 >
                   <div className="sports-showcase-card__media">
-                    {mediaSlot ? (
+                    {mediaSrc ? (
                       <div className="sports-showcase-card__art-shell">
                         <Image
                           alt=""
@@ -122,7 +123,7 @@ export default function HomeSportsSection({
                           fill
                           priority={index === 0}
                           sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 25vw"
-                          src={mediaSlot.targetPath}
+                          src={mediaSrc}
                         />
                       </div>
                     ) : (
@@ -133,7 +134,7 @@ export default function HomeSportsSection({
                           `sports-showcase-card__placeholder--${artName}`,
                         ].join(" ")}
                       >
-                        <span className="sports-showcase-card__placeholder-badge">PNG</span>
+                        <span className="sports-showcase-card__placeholder-badge">ART</span>
                         <span className="sports-showcase-card__placeholder-line sports-showcase-card__placeholder-line--primary" />
                         <span className="sports-showcase-card__placeholder-line sports-showcase-card__placeholder-line--secondary" />
                         <span className="sports-showcase-card__placeholder-frame">
