@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://melbet-sudan.net/sitemap.xml
