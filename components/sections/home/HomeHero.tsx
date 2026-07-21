@@ -1,6 +1,5 @@
 import ButtonLink from "@/components/ui/ButtonLink";
 import MediaSlot from "@/components/ui/MediaSlot";
-import MotionGroup from "@/components/ui/MotionGroup";
 import SectionShell from "@/components/layout/SectionShell";
 import {
   getSudanPathContactActions,
@@ -19,7 +18,7 @@ export default function HomeHero({
 
   return (
     <SectionShell className="hero-section" id="top">
-      <MotionGroup variant="up">
+      <div>
         <div className="hero-journey">
           <div className="hero-copy">
             <span className="section-eyebrow" data-reveal>
@@ -88,7 +87,7 @@ export default function HomeHero({
             </div>
           </div>
         </div>
-      </MotionGroup>
+      </div>
     </SectionShell>
   );
 }
