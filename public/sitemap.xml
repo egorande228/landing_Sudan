@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
   <url>
     <loc>https://melbet-sudan.net/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://melbet-sudan.net/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://melbet-sudan.net/en" />
   </url>
   <url>
     <loc>https://melbet-sudan.net/faq</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://melbet-sudan.net/faq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://melbet-sudan.net/en/faq" />
   </url>
   <url>
     <loc>https://melbet-sudan.net/partnership</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://melbet-sudan.net/partnership" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://melbet-sudan.net/en/partnership" />
   </url>
   <url>
     <loc>https://melbet-sudan.net/en</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://melbet-sudan.net/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://melbet-sudan.net/en" />
   </url>
   <url>
     <loc>https://melbet-sudan.net/en/faq</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://melbet-sudan.net/faq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://melbet-sudan.net/en/faq" />
   </url>
   <url>
     <loc>https://melbet-sudan.net/en/partnership</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://melbet-sudan.net/partnership" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://melbet-sudan.net/en/partnership" />
   </url>
 </urlset>
