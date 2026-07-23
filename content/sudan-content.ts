@@ -202,14 +202,14 @@ const pathContactActions: Record<Locale, LinkItem[]> = {
 const gamesCardCtaByLocale: Record<Locale, LinkItem> = {
   ar: {
     label: "\u0627\u0644\u0639\u0628 \u0627\u0644\u0622\u0646",
-    href: "https://refpa3665.com/L?tag=d_4092175m_66329c_MLBSudan26",
+    href: "/api/go/casino",
     variant: "secondary",
     icon: "arrow",
     external: true,
   },
   en: {
     label: "Play now",
-    href: "https://refpa3665.com/L?tag=d_4092175m_66329c_MLBSudan26",
+    href: "/api/go/casino",
     variant: "secondary",
     icon: "arrow",
     external: true,
@@ -219,14 +219,14 @@ const gamesCardCtaByLocale: Record<Locale, LinkItem> = {
 const offersCardCtaByLocale: Record<Locale, LinkItem> = {
   ar: {
     label: "احصل الآن",
-    href: "https://refpa3665.com/L?tag=d_4092175m_66329c_MLBSudan26",
+    href: "/api/go/casino",
     variant: "secondary",
     icon: "arrow",
     external: true,
   },
   en: {
     label: "Claim now",
-    href: "https://refpa3665.com/L?tag=d_4092175m_66329c_MLBSudan26",
+    href: "/api/go/casino",
     variant: "secondary",
     icon: "arrow",
     external: true,
@@ -236,14 +236,14 @@ const offersCardCtaByLocale: Record<Locale, LinkItem> = {
 const accessCardCtaByLocale: Record<Locale, LinkItem> = {
   ar: {
     label: "\u0627\u0628\u062f\u0623 \u0627\u0644\u0622\u0646",
-    href: "https://refpa3665.com/L?tag=d_4092175m_66329c_MLBSudan26",
+    href: "/api/go/casino",
     variant: "secondary",
     icon: "arrow",
     external: true,
   },
   en: {
     label: "Start now",
-    href: "https://refpa3665.com/L?tag=d_4092175m_66329c_MLBSudan26",
+    href: "/api/go/casino",
     variant: "secondary",
     icon: "arrow",
     external: true,
@@ -253,12 +253,12 @@ const accessCardCtaByLocale: Record<Locale, LinkItem> = {
 const sportsCardLinkByLocale: Record<Locale, LinkItem> = {
   ar: {
     label: "\u0627\u0641\u062A\u062D \u0627\u0644\u0631\u064A\u0627\u0636\u0629",
-    href: "https://refpa3665.com/L?tag=d_4092175m_66329c_SudanSports",
+    href: "/api/go/sports",
     external: true,
   },
   en: {
     label: "Open sports",
-    href: "https://refpa3665.com/L?tag=d_4092175m_66329c_SudanSports",
+    href: "/api/go/sports",
     external: true,
   },
 };
@@ -456,7 +456,7 @@ const marketContent: Localized<SudanMarketContent> = {
             "ارجع إلى الأسئلة السريعة أو انتقل مباشرة إلى نقطة البداية التي تناسبك أكثر.",
           links: [
             { label: "الأسئلة الشائعة", href: "/faq#player-faq", variant: "ghost", icon: "support" },
-            { label: "ابدأ اللعب", href: "https://refpa3665.com/L?tag=d_4092175m_66329c_MLBSudan26", variant: "secondary", icon: "arrow", external: true },
+            { label: "ابدأ اللعب", href: "/api/go/casino", variant: "secondary", icon: "arrow", external: true },
           ],
         },
       },
@@ -990,7 +990,7 @@ const marketContent: Localized<SudanMarketContent> = {
             "Open the quick FAQ or jump back to the starting point that fits you better.",
           links: [
             { label: "Open FAQ", href: "/faq#player-faq", variant: "ghost", icon: "support" },
-            { label: "Go to start", href: "https://refpa3665.com/L?tag=d_4092175m_66329c_MLBSudan26", variant: "secondary", icon: "arrow", external: true },
+            { label: "Go to start", href: "/api/go/casino", variant: "secondary", icon: "arrow", external: true },
           ],
         },
       },
